@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+
+    <title>reveal.js</title>
+
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/reveal.css" />
+    <link rel="stylesheet" href="css/theme/black.css" />
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/monokai.css" />
+
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement("link");
+      link.rel = "stylesheet";
+      link.type = "text/css";
+      link.href = window.location.search.match(/print-pdf/gi)
+        ? "css/print/pdf.css"
+        : "css/print/paper.css";
+      document.getElementsByTagName("head")[0].appendChild(link);
+    </script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          Introduction to Git
+        </section>
+        <section>
+          <h2>What is Git?</h2>
+          <p class="fragment fade-up">
+            Git is a <strong>Distributed Version Control System</strong>.
+          </p>
+          <p class="fragment fade-up">
+            Every user who clones a repository has the entire history on their
+            machine.
+          </p>
+
+          <p class="fragment fade-up">
+            Allowing you to vew the history of changes and revert to an older
+            version easily.
+          </p>
+        </section>
+        <section>
+          <h2>Git & Github</h2>
+          <p class="fragment fade-up">
+            Git is a Version Control System
+          </p>
+          <p class="fragment fade-up">
+            Github is a hosting service for git repositories.
+          </p>
+          <p class="fragment fade-up">
+            Github is a place to store your work (think of this as a back up, a
+            copy of your work stored elsewhere) and collaborate with others.
+          </p>
+          <p class="fragment fade-up">
+            Whilst Git and Github work well together, they are two separate
+            products. Github can be replaced by any other repo hosting service.
+            E.g. Azure, Bit Bucket etc.
+          </p>
+        </section>
+        <section>
+          <h2>What is a repository (repo)?</h2>
+          <p class="fragment fade-up">
+            A repo is a collection of all of the files (and folders) you're
+            tracking with git.
+          </p>
+
+          <p class="fragment fade-up">
+            There are two sides to the repo, <strong>local</strong> and
+            <strong>server</strong>.
+          </p>
+
+          <p class="fragment fade-up">
+            Local is the copy which is on your machine and server is the copy
+            which is on the hosting service.
+          </p>
+        </section>
+        <section>
+          <h2>Suggested Workflow</h2>
+        </section>
+        <section>
+          <h2>Github flow (1/2)</h2>
+          <p class="fragment fade-up">
+            Github flow is a standard practice for managing a repository.
+          </p>
+          <p class="fragment fade-up">
+            You have one main branch called master. Master contains your working
+            code. I.e. a working SQL Script, the working website, a report which
+            gets sent to customers. What ever it is.
+          </p>
+          <p class="fragment fade-up">
+            You never commit changes directly to master. This way you always
+            have the latest working copy.
+          </p>
+        </section>
+        <section>
+          <h2>Github flow (2/2)</h2>
+
+          <p>
+            When someone asks for changes, you create a new branch from master.
+            This is a feature branch.
+          </p>
+          <p class="fragment fade-up">
+            Once that feature branch is fully working, tested and signed off.
+            You merge it in to the Master branch.
+          </p>
+          <p class="fragment fade-up">
+            Master has now been updated to the latest version.
+          </p>
+        </section>
+        <section>
+          <h2>Basic Commands</h2>
+        </section>
+        <section>
+          <h2>Committing</h2>
+          <p class="fragment fade-up">
+            Think of this as saving your work.
+          </p>
+          <p class="fragment fade-up">
+            Once you have made some changes and commited them, you have a
+            snapshot of your work at a certain point in time.
+          </p>
+          <p class="fragment fade-up">
+            You will be able to move forward and make more changes on top of
+            this. If you fuck up, you can roll back to this commit that you know
+            works. Either discarding the breaking changes, or saving them to
+            work with later.
+          </p>
+        </section>
+        <section>
+          <h2>Branching</h2>
+          <p class="fragment fade-up">
+            Creating a branch creates and entirely new copy of the repo for you
+            to work with.
+          </p>
+          <p class="fragment fade-up">
+            You can make as many commits and changes to the new branch as you
+            like, without affecting the original branch.
+          </p>
+          <p class="fragment fade-up">
+            Once the work is complete, you can merge this branch in to the
+            original one and combine the changes.
+          </p>
+        </section>
+        <section>
+          <h2>Merging</h2>
+          <p class="fragment fade-up">
+            Once the work on a feature has been completed and is ready to become
+            the main version, you merge it in to master.
+          </p>
+          <p class="fragment fade-up">
+            This will integrate the feature branch with master.
+          </p>
+        </section>
+        <section>
+          <h2>Merge Conflicts</h2>
+          <p class="fragment fade-up">
+            If master is ahead of your feature (i.e. someone else has merged to
+            master) you will get merge conflicts which need to be sorted.
+          </p>
+          <p class="fragment fade-up">
+            The best way to deal with conflicts is to merge master in your
+            feature, so you have the latest changes. Fix the merge conflicts
+            locally and then merge back to master.
+          </p>
+        </section>
+        <section>
+          <h2>Pushing</h2>
+          <p class="fragment fade-up">
+            So far we have been working completely offline. The hosting service
+            knows nothing about your changes.
+          </p>
+          <p class="fragment fade-up">
+            When you are ready for your changes to be saved to the repo, you
+            <strong>push</strong> the branch.
+          </p>
+          <p class="fragment fade-up">
+            Pushing a branch syncs all of you commits with the cloud. You can
+            work offline for days, and then sync all the changes when you get a
+            connection.
+          </p>
+        </section>
+        <section>
+          <h2>Pulling</h2>
+          <p class="fragment fade-up">
+            You pull a branch to get the latest version from the cloud on to
+            your machine.
+          </p>
+          <p class="fragment fade-up">
+            This is useful when multiple people are working on the same
+            repository and you want to get their latesst changes.
+          </p>
+        </section>
+        <section>
+          <h2>Pushing & Pulling cont.</h2>
+          <p class="fragment fade-up">
+            The push and pull commands work on a branch level.
+          </p>
+          <p class="fragment fade-up">
+            You can push all of your local commits, or pull all of the server
+            commits for a branch in one go.
+          </p>
+          <p class="fragment fade-up">
+            You can not push or pull multiple branches in one go.
+          </p>
+        </section>
+
+        <section>
+          <h2>Cloning & Initializing</h2>
+          <p class="fragment fade-up">
+            <strong>Cloning </strong> is pretty much what it sounds like. Take a
+            copy of an online repository so it can be worked on from your
+            machine. <strong>Initializing</strong> starts a new git repositiroy.
+            It can either be an empty folder structure, or an existing one.
+          </p>
+        </section>
+        <section>
+          <h2>Installing Git</h2>
+          <p class="fragment fade-up">
+            Download the installer from
+            <a target="_blank" href="https://git-scm.com/"
+              >https://git-scm.com/</a
+            >
+          </p>
+          <p class="fragment fade-up">
+            Once installed open a command prompt and run
+          </p>
+          <pre
+            class="fragment fade-up"
+          ><code data-trim data-noescape>git --version</code></pre>
+          <p class="fragment fade-up">
+            If the install was successful you will see the version information
+          </p>
+        </section>
+
+        <section>
+          <h2>Initializing your repo (1/3)</h2>
+          <p>
+            Let's assume you already have a folder structure you would like to
+            turn in to a git repo.
+          </p>
+          <p class="fragment fade-up">
+            In your command prompt navigate to the folder and run the init
+            command:
+          </p>
+          <pre
+            class="fragment fade-up"
+          ><code data-trim data-noescape>git init .</code></pre>
+        </section>
+        <section>
+          <h2>Initializing your repo (2/3)</h2>
+
+          <p class="fragment fade-up">
+            Some files you don't want git to track. Passwords, secrets or nudy
+            photos. Adding a .gitignore file will stop them being synced to the
+            remote repo
+          </p>
+
+          <pre
+            class="fragment fade-up"
+          ><code data-trim data-noescape>echo >.gitignore</code></pre>
+        </section>
+
+        <section>
+          <p class="fragment fade-up">fade-up (also down, left and right!)</p>
+        </section>
+      </div>
+    </div>
+
+    <script src="js/reveal.js"></script>
+
+    <script>
+      // More info about config & dependencies:
+      // - https://github.com/hakimel/reveal.js#configuration
+      // - https://github.com/hakimel/reveal.js#dependencies
+      Reveal.initialize({
+        hash: true,
+        dependencies: [
+          { src: "plugin/markdown/marked.js" },
+          { src: "plugin/markdown/markdown.js" },
+          { src: "plugin/highlight/highlight.js" },
+          { src: "plugin/notes/notes.js", async: true }
+        ]
+      });
+    </script>
+  </body>
+</html>
